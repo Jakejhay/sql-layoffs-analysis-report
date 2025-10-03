@@ -28,6 +28,8 @@ ORDER BY total_laid_off DESC
 | Other     | 11694          |
 | Finance   | 5181           |
 
+total_laid_off.jpg
+
 ## 2. Layoffs by Country
 -- Assessing geographic impact to target regional recovery efforts
 ```sql
