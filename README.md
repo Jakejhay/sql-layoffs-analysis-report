@@ -6,7 +6,7 @@ A staffing agency needs insights into global layoff patterns to help tech client
 ## Dataset
 - **File**: [layoffs.csv](layoffs.csv) – 2361 rows, 9 columns (e.g., `industry`, `total_laid_off`).
 - **Source**: Tutor-provided CSV on 2022-2023 tech layoffs.
-- **Initial Findings**: 2361 events, 34 unique industries (e.g., 'Other', 'Media'), ~[your NULL count in total_laid_off] NULLs in `total_laid_off`, ~[your NULL count in percentage_laid_off] in `percentage_laid_off`.
+- **Initial Findings**: 2361 events, 34 unique industries (e.g., 'Other', 'Media'), ~[740 Nulls in `total_laid_off`, ~ 31 Nulls in `percentage_laid_off`.
 
 ## Analysis Approach
 I used SQL to explore the data, focusing on industry, country, and time-based trends. Below are key queries with explanations and results.
@@ -21,7 +21,7 @@ FROM layoffs
 GROUP BY industry
 ORDER BY total_laid_off DESC
 ```
-2. Layoffs by Country
+## 2. Layoffs by Country
 -- Assessing geographic impact to target regional recovery efforts
 ```sql
 SELECT country, 
@@ -32,11 +32,11 @@ ORDER BY total_laid_off DESC
 LIMIT 5;
 ```
 
-3. Monthly Layoff Trends
+## 3. Monthly Layoff Trends
 -- Tracking time patterns to predict future risks
 ```sql
-SELECT strftime('%Y-%m', date) AS month,
-       SUM(total_laid_off) AS monthly_laid_off
+SELECT date AS month, 
+ SUM(total_laid_off) AS monthly_laid_off
 FROM layoffs
 WHERE date IS NOT NULL
 GROUP BY month
