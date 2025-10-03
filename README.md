@@ -21,6 +21,13 @@ FROM layoffs
 GROUP BY industry
 ORDER BY total_laid_off DESC
 ```
+### 1. Total Layoffs by Industry
+| Industry  | Total Laid Off |
+|-----------|----------------|
+| Consumer  | 18234          |
+| Other     | 11694          |
+| Finance   | 5181           |
+
 ## 2. Layoffs by Country
 -- Assessing geographic impact to target regional recovery efforts
 ```sql
