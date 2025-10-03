@@ -20,6 +20,36 @@ SELECT industry,
 FROM layoffs
 GROUP BY industry
 ORDER BY total_laid_off DESC
+```
+2. Layoffs by Country
+-- Assessing geographic impact to target regional recovery efforts
+```sql
+SELECT country, 
+       SUM(total_laid_off) AS total_laid_off
+FROM layoffs
+GROUP BY country
+ORDER BY total_laid_off DESC
+LIMIT 5;
+```
+
+3. Monthly Layoff Trends
+-- Tracking time patterns to predict future risks
+```sql
+SELECT strftime('%Y-%m', date) AS month,
+       SUM(total_laid_off) AS monthly_laid_off
+FROM layoffs
+WHERE date IS NOT NULL
+GROUP BY month
+ORDER BY month;
+```
+
+
+
+
+
+
+
+
 
 
 
