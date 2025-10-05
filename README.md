@@ -7,7 +7,8 @@ This project analyzes layoff trends across industries, companies, and countries 
 - `Data Exploration.sql`: Initial exploration of the dataset.
 - `Data Cleaning.sql`: Cleaning steps to handle NULLs, duplicates, and inconsistencies.
 - `Data Analysis.sql`: Queries for trend analysis (yearly, monthly, etc.).
-- `layoffs.csv`: The source dataset.
+- `layoffs.csv`: The original dirty dataset (2,361 rows with NULLs).
+- `cleaned_layoffs.csv`: The cleaned dataset (after cleaning and duplicate removal).
 
 ## Analysis Approach
 1. **Data Exploration**: See ( Data Exploration.sql ) for initial insights.
