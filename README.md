@@ -1,64 +1,25 @@
-# Layoff Trends Analysis for Staffing Strategy (2022-2023)
+# SQL Layoffs Analysis Report
 
-## Business Case
-A staffing agency needs insights into global layoff patterns to help tech clients plan hiring and mitigate risks post-2022 economic shifts. This analysis explores 2361 layoff events to identify key trends.
+## Project Overview
+This project analyzes layoff trends across industries, companies, and countries using a dataset of 2361 layoff events from 2020 to 2023.
 
-## Dataset
-- **File**: [layoffs.csv](layoffs.csv) – 2361 rows, 9 columns (e.g., `industry`, `total_laid_off`).
-- **Source**: Tutor-provided CSV on 2022-2023 tech layoffs.
-- **Initial Findings**: 2361 events, 34 unique industries (e.g., 'Other', 'Media'), ~[740 Nulls in `total_laid_off`, ~ 31 Nulls in `percentage_laid_off`.
+## File Structure
+- `Data Exploration.sql`: Initial exploration of the dataset.
+- `Data Cleaning.sql`: Cleaning steps to handle NULLs, duplicates, and inconsistencies.
+- `Data Analysis.sql`: Queries for trend analysis (yearly, monthly, etc.).
+- `layoffs.csv`: The source dataset.
 
 ## Analysis Approach
-I used SQL to explore the data, focusing on industry, country, and time-based trends. Below are key queries with explanations and results.
+1. **Data Exploration**: See ( Data Exploration.sql ) for initial insights.
+2. **Data Cleaning**: See ( Data Cleaning.sql ) for data preparation.
+3. **Data Analysis**: See ( Data Analysis.sql ) for trends and insights.
 
-### 1. Total Layoffs by Industry
--- Identifying industries with the highest layoff volumes to pinpoint vulnerable sectors
-```sql
-SELECT industry, 
-       SUM(total_laid_off) AS total_laid_off,
-       AVG(percentage_laid_off) AS avg_percentage_laid_off
-FROM layoffs
-GROUP BY industry
-ORDER BY total_laid_off DESC
-```
-### 1. Total Layoffs by Industry
-| Industry  | Total Laid Off |
-|-----------|----------------|
-| Consumer  | 18234          |
-| Other     | 11694          |
-| Finance   | 5181           |
+## Analysis Summaries
+- **Yearly Trends**: Layoffs peaked in 2022 with 160,661 total across 1,211 events, up 2x from 2020’s 80,998, with an average percentage peaking at 40.2% in 2021. See(Data Analysis.sql).
+- **Monthly Trends**: Highlights a spike in Q1 2023.
+- **Industry Impact**: The Consumer and Retail industries led with over 43,000 layoffs each, while Travel had the highest average percentage (31.9%), suggesting deeper cuts per event. Finance showed the highest event count (284), reflecting widespread activity.
 
-total_laid_off.jpg
-
-## 2. Layoffs by Country
--- Assessing geographic impact to target regional recovery efforts
-```sql
-SELECT country, 
-       SUM(total_laid_off) AS total_laid_off
-FROM layoffs
-GROUP BY country
-ORDER BY total_laid_off DESC
-LIMIT 5;
-```
-
-## 3. Monthly Layoff Trends
--- Tracking time patterns to predict future risks
-```sql
-SELECT date AS month, 
- SUM(total_laid_off) AS monthly_laid_off
-FROM layoffs
-WHERE date IS NOT NULL
-GROUP BY month
-ORDER BY month;
-```
-
-
-
-
-
-
-
-
-
-
-
+## Key Findings
+- Highest layoffs in 2020 with 80,998 total.
+- Consumer and Retail industries led with 44,782 and 43,613 layoffs respectively.
+- Monthly trends show a spike in Q1 2023.
