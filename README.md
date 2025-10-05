@@ -3,6 +3,12 @@
 ## Project Overview
 This project analyzes layoff trends across industries, companies, and countries using a dataset of 2361 layoff events from 2020 to 2023.
 
+## Goals
+- Analyze layoff trends from 2020 to 2023 to identify patterns across industries, companies, and countries.
+- Clean and preprocess a raw dataset of 2,361 records to ensure data quality for reliable insights.
+- Provide actionable insights through SQL-based exploration and analysis, focusing on yearly, monthly, and industry impacts.
+- Document the workflow and findings to serve as a reusable template for similar data projects.
+
 ## File Structure
 - `Data Exploration.sql`: Initial exploration of the dataset.
 - `Data Cleaning.sql`: Cleaning steps to handle NULLs, duplicates, and inconsistencies.
