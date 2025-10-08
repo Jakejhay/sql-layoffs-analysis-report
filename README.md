@@ -85,20 +85,20 @@ This project strengthened my understanding of:
 ---
 
 ## 🗂️ Folder Structure
-**Data Folder**
+##Data Folder##
 This folder contains the raw and processed versions of the dataset.
 
-**raw_layoffs.csv:** The original dataset with NULLs and inconsistencies (2,361 rows). Used as the starting point for analysis.
+##raw_layoffs.csv:## The original dataset with NULLs and inconsistencies (2,361 rows). Used as the starting point for analysis.
 cleaned_layoffs.csv: The cleaned version after SQL processing, including NULL handling, duplicate removal, and standardization (approximately 2,355 rows). This is ready for further analysis or visualization.
 
-**SQL Folder**
+##SQL Folder##
 This folder holds the SQL scripts for each phase of the project.
 
-**data_cleaning.sql:** Handles NULL values, duplicates removal, and standardization of text fields like industry and country names.
+##data_cleaning.sql:## Handles NULL values, duplicates removal, and standardization of text fields like industry and country names.
 exploratory_analysis.sql: Performs initial data overview, such as counting unique industries and top countries by events.
 key_insights_queries.sql: Focuses on trend analysis, including yearly and monthly layoffs, industry impacts, and funding correlations.
 
-**Root Files**
+##Root Files##
 
 **README.md:** This file—project overview, insights, and instructions for replication.
 ---
