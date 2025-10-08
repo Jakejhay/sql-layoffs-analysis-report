@@ -88,22 +88,18 @@ This project strengthened my understanding of:
 sql-layoffs-analysis-report/
 │
 ├── data/
-│ ├── raw_layoffs.csv
-│ └── cleaned_layoffs.csv
+│   ├── raw_layoffs.csv          # Original dataset with NULLs and inconsistencies
+│   └── cleaned_layoffs.csv      # Cleaned version after SQL processing
 │
 ├── sql/
-│ ├── data_cleaning.sql
-│ ├── exploratory_analysis.sql
-│ └── key_insights_queries.sql
+│   ├── data_cleaning.sql        # NULL handling, duplicates removal, and standardization
+│   ├── exploratory_analysis.sql # Initial data overview and patterns
+│   └── key_insights_queries.sql # Trend analysis (yearly, monthly, industry)
 │
-└── README.md
-
+└── README.md                    # Project overview, insights, and instructions
 ---
 
 ## 👤 Author
 **Jacob Olorundare**  
 📍 Data Enthusiast | SQL Analyst in Training  
 🔗 [https://github.com/Jakejhay](https://github.com/Jakejhay)
-
-## License
-This project is licensed under the [MIT License](LICENSE). See LICENSE file for details.
