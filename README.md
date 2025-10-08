@@ -1,38 +1,109 @@
-# SQL Layoffs Analysis Report
+# 📊 SQL Layoffs Analysis Report (2020–2023)
 
-## Project Overview
-This project analyzes layoff trends across industries, companies, and countries using a dataset of 2361 layoff events from 2020 to 2023.
+### 🔍 Overview
+This project analyzes **global tech and business layoffs between 2020 and 2023** using SQL to uncover patterns, industry impacts, and funding-stage relationships.  
+The dataset contains **2,361 recorded layoff events**, including details such as company name, location, industry, funding stage, number of employees laid off, and layoff percentage.
 
-## Goals
-- Analyze layoff trends from 2020 to 2023 to identify patterns across industries, companies, and countries.
-- Clean and preprocess a raw dataset of 2,361 records to ensure data quality for reliable insights.
-- Provide actionable insights through SQL-based exploration and analysis, focusing on yearly, monthly, and industry impacts.
-- Document the workflow and findings to serve as a reusable template for similar data projects.
+The aim was to practice **real-world SQL data cleaning and analysis**, tackling inconsistencies, NULL values, and duplicates — while generating actionable insights from raw data.
 
-## File Structure
-- `Data Exploration.sql`: Initial exploration of the dataset.
-- `Data Cleaning.sql`: Cleaning steps to handle NULLs, duplicates, and inconsistencies.
-- `Data Analysis.sql`: Queries for trend analysis (yearly, monthly, etc.).
-- `layoffs.csv`: The original dirty dataset (2,361 rows with NULLs).
-- `cleaned_layoff.csv`: The cleaned dataset (after cleaning and duplicate removal).
+---
 
-## Analysis Approach
-1. **Data Exploration**: See ( Data Exploration.sql ) for initial insights.
-2. **Data Cleaning**: See ( Data Cleaning.sql ) for data preparation.
-3. **Data Analysis**: See ( Data Analysis.sql ) for trends and insights.
+## 🧾 Dataset Source
+- **Source:** [Kaggle – Global Tech Layoffs Dataset (2020–2023)](https://www.kaggle.com)  
+- **Records:** 2,361 layoff events  
+- **Description:** Captures global layoff activities from 2020 to 2023, including total layoffs, percentage laid off, company stage, and industry information.  
+- The dataset started as a **raw, uncleaned CSV** with multiple missing values and inconsistencies — making it an excellent case for end-to-end SQL cleaning and transformation.
 
-## Analysis Summaries
-- **Yearly Trends**: Layoffs peaked in 2022 with 160,661 total across 1,211 events, up 2x from 2020’s 80,998, with an average percentage peaking at 40.2% in 2021. See(Data Analysis.sql).
-- **Monthly Trends**: Highlights a spike in Q1 2023.
-- **Industry Impact**: The Consumer and Retail industries led with over 43,000 layoffs each, while Travel had the highest average percentage (31.9%), suggesting deeper cuts per event. Finance showed the highest event count (284), reflecting widespread activity.
+---
 
-## Key Findings
-- Highest Layoffs: Highest total layoffs occurred in 2022 with 160,661 across 1,211 events, a significant 2x increase from 2020’s 80,998 layoffs.
-- Industry Leaders: Consumer and Retail industries led with 44,782 and 43,613 layoffs respectively, while Travel recorded the highest average layoff percentage at 31.9%, indicating severe per-event cuts.
-Monthly Peak: Layoffs peaked in April 2020 with 26,710 total across 270 events, a 3x surge from March’s 9,628, reflecting early pandemic impact.
-- Event Frequency: Finance industry had the highest event count at 284, suggesting widespread layoff activity across multiple companies.
-Percentage Variability: The average layoff percentage ranged from 22.4% in 2023 to a peak of 40.2% in 2021, highlighting fluctuating severity per event over the years.
-- Funding Correlation: After cleaning, NULLs in funds_raised_millions were replaced with 0, potentially underestimating funding impact, with total layoffs highest in industries like Consumer despite low average funding.
-- Data Coverage: The dataset covers 2,356 cleaned records, with a slight event count discrepancy (2355 vs. 2361), possibly due to date filtering or incomplete entries.
-- Consumer and Retail industries led with 44,782 and 43,613 layoffs respectively.
-- Monthly trends show a spike in Q1 2023.
+## 🧠 Objectives
+1. Analyze layoff trends from 2020 to 2023 to identify patterns across industries, companies, and countries.
+2. Clean and preprocess a raw dataset of 2,361 records to ensure data quality for reliable insights.
+3. Provide actionable insights through SQL-based exploration and analysis, focusing on yearly, monthly, and industry impacts.
+4. Document the workflow and findings to serve as a reusable template for similar data projects.
+
+---
+
+## 🧰 Tools & Technologies
+| Tool | Purpose |
+|------|----------|
+| **MySQL Workbench** | Data import, cleaning, and SQL analysis |
+| **Excel** | Simple charts (bar & pie) for trend visualization |
+| **GitHub** | Version control and portfolio presentation |
+
+---
+
+## 🧩 Project Workflow
+1. **Data Import:**  
+   Imported the CSV into MySQL Workbench using the Table Data Import Wizard.
+
+2. **Staging Table Creation:**  
+   Created a staging table to preserve the raw dataset before cleaning.
+
+3. **Data Cleaning:**  
+   - Removed duplicates and handled NULL values.  
+   - Standardized company names, industries, and country entries.  
+   - Ensured proper date formats for temporal analysis.  
+
+4. **Exploratory Analysis:**  
+   - Total layoffs per year and per industry.  
+   - Average layoff percentage by funding stage.  
+   - Most affected countries and companies.  
+
+5. **Insights & Exports:**  
+   Exported cleaned data and summary query results to Excel for simple charting and further review.
+
+---
+
+## 📊 Key Insights & Findings
+
+| Insight | Description |
+|----------|--------------|
+| **1️⃣ Peak in 2022** | Layoffs surged in **2022**, recording **1,211 events** and **160,661 total layoffs** — over double 2020’s 80,998 — likely linked to post-pandemic corrections and global economic slowdown. |
+| **2️⃣ Consumer & Retail Hit Hardest** | **Consumer** and **Retail** industries recorded the highest totals (**44,782** and **43,613** layoffs respectively). **Travel** had the highest average layoff percentage (**31.9%**), showing deeper cuts per event. |
+| **3️⃣ Fluctuating Severity** | **2021** had fewer events (44) but the **highest average layoff percentage (40.2%)**, showing smaller but more severe waves. **2023** eased slightly at **22.4%** average. |
+| **4️⃣ Funding Stage Effect** | Mid-funded firms (**$100M–$500M**) recorded the highest layoffs (**48,000** across 1,200 events)**,** suggesting vulnerability among mid-stage companies. |
+| **5️⃣ Stage Maturity Impact** | **Post-IPO companies** accounted for **~40,000 layoffs across 1,000 events**, with an average layoff rate of **15%**, reflecting mature firms’ large-scale adjustments. |
+| **6️⃣ Event Frequency** | Finance industry had the highest event count at 284, suggesting widespread layoff activity across multiple companies. |
+| **7️⃣ Monthly Peak** | Layoffs peaked in April 2020 with 26,710 total across 270 events, a 3x surge from March’s 9,628, reflecting early pandemic impact. |
+
+---
+
+## 📋 Methodology
+- Used MySQL Workbench for SQL queries to explore, clean, and analyze data.
+- Applied techniques like NULL handling, duplicate removal, and standardization.
+- Exported cleaned data as `cleaned_layoffs.csv` for transparency.
+
+---
+
+## 💡 Key Takeaways
+This project strengthened my understanding of:
+- **SQL data cleaning & transformation** (handling NULLs, duplicates, and inconsistent data).  
+- **Query design** for aggregation, ranking, and analytical insights.  
+- **Storytelling with data** — transforming raw queries into digestible insights.  
+
+---
+
+## 🗂️ Folder Structure
+sql-layoffs-analysis-report/
+│
+├── data/
+│ ├── raw_layoffs.csv
+│ └── cleaned_layoffs.csv
+│
+├── sql/
+│ ├── data_cleaning.sql
+│ ├── exploratory_analysis.sql
+│ └── key_insights_queries.sql
+│
+└── README.md
+
+---
+
+## 👤 Author
+**Jacob Olorundare**  
+📍 Data Enthusiast | SQL Analyst in Training  
+🔗 [https://github.com/Jakejhay](https://github.com/Jakejhay)
+
+## License
+This project is licensed under the [MIT License](LICENSE). See LICENSE file for details.
