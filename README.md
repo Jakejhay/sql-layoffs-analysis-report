@@ -100,7 +100,7 @@ key_insights_queries.sql: Focuses on trend analysis, including yearly and monthl
 
 ## Root Files
 
-**README.md:** This file—project overview, insights, and instructions for replication.
+**README.md:** This contains file project overview, insights, and instructions for replication.
 ---
 
 ## 👤 Author
